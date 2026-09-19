@@ -6,6 +6,7 @@ import { getPostBySlug, getCategories, getRelatedPosts } from "@/lib/wordpress";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { PostMeta } from "@/components/PostMeta";
 import { PostContent } from "@/components/PostContent";
+import { ShareButtons } from "@/components/ShareButtons";
 import { RelatedPosts } from "@/components/RelatedPosts";
 import { cleanExcerpt } from "@/lib/cleanWordPressContent";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -112,6 +113,10 @@ export default async function PostPage({ params }: PostPageProps) {
 
         <div className="mx-auto max-w-3xl">
           <PostContent html={post.content.rendered} />
+
+          <div className="mt-8">
+            <ShareButtons title={title} slug={slug} />
+          </div>
         </div>
         
         <RelatedPosts posts={relatedPosts} />
