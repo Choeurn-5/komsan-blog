@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-card: var(--brand-card);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-text: var(--brand-text);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-accent-text: var(--brand-accent-text);
+  --color-brand-border: var(--brand-border);
+  --font-playfair: var(--font-playfair);
+  --font-inter: var(--font-inter);
+}
+
+:root {
+  /* Default to Light Mode */
+  --brand-bg: #fdfdf9;
+  --brand-surface: #ffffff;
+  --brand-secondary: #f0f5f1;
+  --brand-card: #ffffff;
+  --brand-text: #173b29;
+  --brand-muted: #65776d;
+  --brand-accent: #0b5c32;
+  --brand-accent-text: #ffffff;
+  --brand-border: #cbd9cf;
+}
+
+/* Dark mode */
+.dark {
+  --brand-bg: #0b1a13;
+  --brand-card: #12281e;
+  --brand-secondary: #1b3829;
+  --brand-text: #ffffff;
+  --brand-muted: #9ab4a3;
+  --brand-accent: #d5f36a;
+  --brand-accent-text: #0b1a13;
+  --brand-border: #31533f;
+}
+
+/* Optional: System preference fallback if neither class is present on html */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --brand-bg: #0b1a13;
+    --brand-card: #12281e;
+    --brand-secondary: #1b3829;
+    --brand-text: #ffffff;
+    --brand-muted: #9ab4a3;
+    --brand-accent: #d5f36a;
+    --brand-accent-text: #0b1a13;
+    --brand-border: #31533f;
+  }
+}
+
+.komsan-page {
+  background-color: var(--brand-bg);
+  color: var(--brand-text);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
